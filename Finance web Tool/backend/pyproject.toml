@@ -1,0 +1,19 @@
+[project]
+name = 'deal-master-backend'
+version = '0.1.0'
+description = 'FastAPI backend for the E2E Finance Deal Master demo'
+requires-python = '>=3.11'
+dependencies = [
+  'fastapi==0.115.5',
+  'langfuse>=5.0.0',
+  'openai>=1.0.0',
+  'python-dotenv>=1.0.1',
+  'python-multipart>=0.0.9',
+  'uvicorn[standard]==0.32.0',
+]
+
+[tool.uv]
+package = false
+
+
+
