@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "SOP Studio Recorder",
+  "description": "Capture a browser workflow across tabs, review its steps, and export an illustrated SOP.",
+  "version": "0.1.0",
+  "minimum_chrome_version": "120",
+  "permissions": ["tabs", "storage", "alarms", "unlimitedStorage", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_popup": "popup.html", "default_title": "SOP Studio Recorder" },
+  "content_scripts": [{ "matches": ["http://*/*", "https://*/*"], "js": ["targets.js", "content.js"], "run_at": "document_start", "all_frames": false }],
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'none'" }
+}
